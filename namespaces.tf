@@ -13,12 +13,12 @@ resource "vault_namespace" "web_team" {
 
 resource "vault_namespace" "web_test" {
   provider = vault.web_team
-  path = "web_test"
+  path     = "web_test"
 }
 
 resource "vault_namespace" "web_prod" {
   provider = vault.web_team
-  path = "web_prod"
+  path     = "web_prod"
 }
 
 resource "vault_namespace" "hcp" {
@@ -29,3 +29,6 @@ resource "vault_namespace" "boundary" {
   path = "boundary"
 }
 
+resource "vault_namespace" "finance" {
+  path = "finance"
+}

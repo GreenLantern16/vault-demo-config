@@ -4,39 +4,44 @@ provider "vault" {
 }
 
 provider "vault" {
-  address = "http://${var.vault_host}:${var.vault_port}"
-  token   = var.vault_token
+  address   = "http://${var.vault_host}:${var.vault_port}"
+  token     = var.vault_token
   namespace = trimsuffix(vault_namespace.core_infra.id, "/")
-  alias = "core_infra"
+  alias     = "core_infra"
 }
 
 provider "vault" {
-  address = "http://${var.vault_host}:${var.vault_port}"
-  token   = var.vault_token
+  address   = "http://${var.vault_host}:${var.vault_port}"
+  token     = var.vault_token
   namespace = trimsuffix(vault_namespace.database_team.id, "/")
-  alias = "database_team"
+  alias     = "database_team"
 }
 provider "vault" {
-  address = "http://${var.vault_host}:${var.vault_port}"
-  token   = var.vault_token
+  address   = "http://${var.vault_host}:${var.vault_port}"
+  token     = var.vault_token
   namespace = trimsuffix(vault_namespace.web_team.id, "/")
-  alias = "web_team"
+  alias     = "web_team"
 }
 provider "vault" {
-  address = "http://${var.vault_host}:${var.vault_port}"
-  token   = var.vault_token
+  address   = "http://${var.vault_host}:${var.vault_port}"
+  token     = var.vault_token
   namespace = trimsuffix(vault_namespace.high_performance_computing.id, "/")
-  alias = "hpc"
+  alias     = "hpc"
 }
 
 provider "vault" {
-  address = "http://${var.vault_host}:${var.vault_port}"
-  token   = var.vault_token
+  address   = "http://${var.vault_host}:${var.vault_port}"
+  token     = var.vault_token
   namespace = trimsuffix(vault_namespace.boundary.id, "/")
-  alias = "boundary"
+  alias     = "boundary"
 }
 
-
+provider "vault" {
+  address   = "http://${var.vault_host}:${var.vault_port}"
+  token     = var.vault_token
+  namespace = trimsuffix(vault_namespace.finance.id, "/")
+  alias     = "finance"
+}
 
 resource "vault_mount" "infra-creds" {
   path        = "infrastructure_creds"
