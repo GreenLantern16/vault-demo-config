@@ -33,3 +33,4 @@ input.auto.tfvars
 vaul-cs-module/.DS_Store
 terraform.tfstate
 terraform.tfstate.backup
+*tfvars
