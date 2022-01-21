@@ -11,6 +11,21 @@ resource "vault_namespace" "web_team" {
   path = "web_team"
 }
 
+resource "vault_namespace" "web_test" {
+  provider = vault.web_team
+  path = "web_test"
+}
+
+resource "vault_namespace" "web_prod" {
+  provider = vault.web_team
+  path = "web_prod"
+}
+
 resource "vault_namespace" "hcp" {
   path = "high_performance_computing"
 }
+
+resource "vault_namespace" "boundary" {
+  path = "boundary"
+}
+
